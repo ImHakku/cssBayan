@@ -1,10 +1,79 @@
 * {
     box-sizing: border-box;
+    
+    transition: .2s;
 }
 
-html {
-    font-family: Arial, Helvetica, sans-serif;
+html, body {
+    font-family: Arial, sans-serif;
     font-size: 10px;
     margin: 0;
     padding: 0;
+}
+
+.bayan {
+    max-width: 50rem;
+    margin: 3rem auto;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid red;
+}
+
+.bayan:hover *:hover{
+    cursor: pointer;
+}
+
+.bayan:hover .bayan__open-ico {
+    display: inline-block;
+}
+
+.bayan__meme {
+    border-bottom: 0.1rem solid #000;
+    padding: 1.5rem;
+}
+
+.meme__label {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    flex-wrap: wrap;
+    color: #000;
+}
+
+.meme__checkbox {
+    width: 0;
+    height: 0; 
+    appearance: none;
+}
+
+.meme__wrapper {
+    display: none;
+    width: 100%;
+    transition: 1s;
+}
+
+.meme__img {
+    width: 30rem;
+    height: 30rem;
+    margin: 1.5rem 0 0;
+}
+
+.bayan__open-ico {
+    display: none;
+    align-self: baseline;
+    width: 2rem;
+    height: 2rem;
+    background-image: url(./assets/plus.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.meme__checkbox:checked ~ .meme__wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.meme__checkbox:checked ~ .bayan__open-ico {
+    transform: rotate(45deg);
 }
