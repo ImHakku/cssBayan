@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    
+    transition: .2s;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.bayan {
+    max-width: 50rem;
+    margin: 3rem auto;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media (hover: hover) {
+    .bayan:hover *:hover{
+        cursor: pointer;
+    }
+    
+    .bayan:hover .meme__text{
+        color: #000;
+    }
+    
+    .bayan:hover .bayan__open-ico {
+        display: inline-block;
+    }
+    
+    .meme__img:hover {
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.bayan__meme {
+    border-bottom: 0.1rem solid #000;
+    padding: 1.5rem;
+}
+
+.meme__label {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+.meme__checkbox {
+    width: 0;
+    height: 0; 
+    appearance: none;
+}
+
+.meme__wrapper {
+    display: none;
+    width: 100%;
+    transition: 1s;
+}
+
+.meme__img {
+    max-width: 100%;
+    height: 30rem;
+    margin: 1.5rem 0 0;
+}
+
+.bayan__open-ico {
+    display: none;
+    align-self: baseline;
+    width: 2rem;
+    height: 2rem;
+    background-image: url(./assets/plus.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.meme__text {
+    flex-grow: 1;
+    color: #1f4eb3;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.meme__checkbox:checked ~ .meme__wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.meme__checkbox:checked ~ .meme__text {
+    color: #1f4eb3;
+}
+
+.meme__checkbox:checked ~ .bayan__open-ico {
+    transform: rotate(45deg);
+}
+
+@media (max-width: 320px) {
+    .meme__text {
+        font-size: 30px;
+    }
+    .meme__img {
+        max-width: 100%;
+        max-height: 20rem;
+    }
+}
+
+@media (max-width: 820px) {
+    .meme__text {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .meme__text {
+        font-size: 20px;
+    }
+}
